@@ -1,10 +1,15 @@
-
+import{Login, Catalogo} from './components'
 
 function App() {
+/* let loginefetuado = true */
+//loginefetuado = false
+
   return (
-    <div>
-     oi
-    </div>
+    <>
+     {/* {!loginefetuado ? <Login/>: <Catalogo/>} */}
+     <Login/>
+     <Catalogo/>
+    </>
   );
 }
 
