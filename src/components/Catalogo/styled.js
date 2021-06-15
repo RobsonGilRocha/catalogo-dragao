@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const CatalogoBox = styled.div`
-height: 10em;
-width: 10em;
+height: 90%;
+width: 90%;
 align-items: center;
 align-self: center;
 display: flex;
