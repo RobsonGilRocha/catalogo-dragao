@@ -3,9 +3,12 @@ import styled from 'styled-components';
 export const CatalogoBox = styled.div`
 height: 90%;
 width: 90%;
+border-style: solid;
+border-radius: 17px;
 
 //flex-direction: row;
 background-color:yellow;
+border-style: solid;
 border-radius: 17px;
 padding: 10px;
 margin: 5px;
@@ -15,7 +18,8 @@ height: 90%;
 width: 90%;
 display: grid;
 background-color:green;
-
+border-style: solid;
+border-radius: 17px;
 `
 
 export const DragaoBox = styled.div`

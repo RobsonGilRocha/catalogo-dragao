@@ -1,12 +1,18 @@
 import { CatalogoBox, DragaoBox, GridBox } from './styled';
 import React,{useEffect, useState } from 'react'
 import {getDragons, createDragons,deleteDragons} from '../../services/dragon'
+import { Row } from '..';
 
 
 function Catalogo() {
   const [dragons, setDragons] = useState()
   const [luz, setLuz] = useState(false)
   const [count, setCount] =useState(0)
+
+
+  let createname = "Alanazador"
+  let createtype = "coach"
+  let createhistories = "Uma historia suprenente, inovadora, além de mentes e corações destroi emocões e implementa lógica"
 
   useEffect(()=>{
     
@@ -27,7 +33,10 @@ function Catalogo() {
  }
 
  async function handleCreateDragon(){
-  await createDragons({name:"Supremo",type:"Elemental",histories:"Uma Historia muito longa para estar aqui nesta div..."})
+  await createDragons({name:`${createname}`,
+  type:`${createtype}`,
+  histories:`${createhistories}`}
+  ,setLuz(!luz))
  }
 
   
@@ -36,16 +45,19 @@ function Catalogo() {
 
   return (
       <CatalogoBox>
-        <DragaoBox  onClick={deleteALL}>
+        <Row>
+          <DragaoBox  onClick={deleteALL}>
             botao da morte
           </DragaoBox>
           <DragaoBox  onClick={()=> setLuz(!luz)}>
-            botao Atualiza
+          {luz  ? `Quantidade de Dragões: ${count} `  : `Quantidade de Dragões: ${count}`}
           </DragaoBox>
           <DragaoBox  onClick={handleCreateDragon}>
             botao cria
           </DragaoBox>
-          <DragaoBox> {luz  ? `luz esta ligada ${count}`  : `luz esta desligada ${count}`} </DragaoBox>
+          <DragaoBox  onClick={()=> setLuz(!luz)}> {luz  ? `luz esta ligada `  : `luz esta desligada `} </DragaoBox>
+        </Row>
+       
   
           
 
