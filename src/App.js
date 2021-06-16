@@ -1,14 +1,13 @@
 import{Login, Catalogo} from './components'
 
 function App() {
-/* let loginefetuado = true */
-//loginefetuado = false
+ let loginefetuado = true 
+
 
   return (
     <>
-     {/* {!loginefetuado ? <Login/>: <Catalogo/>} */}
-     <Login/>
-     <Catalogo/>
+     {!loginefetuado ? <Login/>: <Catalogo/>}
+     
     </>
   );
 }
