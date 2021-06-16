@@ -5,7 +5,7 @@ export async function getDragons() {
     const { get } = api
     return get(endpoints.dragon)
 }
-export async function createDragons({name, type}) { api.post(endpoints.createdragon,{name,type})
+export async function createDragons({name, type,histories}) { api.post(endpoints.createdragon,{name,type,histories})
 }
 export async function putDragons(id) { api.put(endpoints.updatedragon(id))
 }

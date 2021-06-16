@@ -27,7 +27,7 @@ function Catalogo() {
  }
 
  async function handleCreateDragon(){
-  await createDragons({name:"GATON",type:"FELINES"})
+  await createDragons({name:"Supremo",type:"Elemental",histories:"Uma Historia muito longa para estar aqui nesta div..."})
  }
 
   
