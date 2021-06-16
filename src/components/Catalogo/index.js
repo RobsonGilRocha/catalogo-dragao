@@ -23,12 +23,13 @@ function Catalogo() {
  async function deleteALL(){
   dragons?.forEach(async (dragon) => {
   await deleteDragons(dragon.id)})
-  setLuz(!luz)
+  
  }
 
  async function handleCreateDragon(){
   await createDragons({name:"GATON",type:"FELINES"})
  }
+
   
   console.log(dragons)
   
@@ -38,16 +39,15 @@ function Catalogo() {
         <DragaoBox  onClick={deleteALL}>
             botao da morte
           </DragaoBox>
-          <DragaoBox  onClick={count}>
+          <DragaoBox  onClick={()=> setLuz(!luz)}>
             botao Atualiza
           </DragaoBox>
           <DragaoBox  onClick={handleCreateDragon}>
             botao cria
           </DragaoBox>
-          {luz  ? <DragaoBox>"luz esta ligada"</DragaoBox>: <DragaoBox>"luz esta desligada"</DragaoBox>}
-          <DragaoBox>
-            {count}
-          </DragaoBox>
+          <DragaoBox> {luz  ? `luz esta ligada ${count}`  : `luz esta desligada ${count}`} </DragaoBox>
+  
+          
 
         <h1>CatalogoBox</h1>
         <GridBox>grid
