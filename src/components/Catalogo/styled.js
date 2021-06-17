@@ -3,15 +3,10 @@ import styled from 'styled-components';
 export const CatalogoBox = styled.div`
 height: 90%;
 width: 90%;
-border-style: solid;
-border-radius: 17px;
-
-//flex-direction: row;
 background-color:yellow;
 border-style: solid;
-border-radius: 17px;
-padding: 10px;
-margin: 5px;
+border-radius: 1%;
+margin: 1%;
 `
 export const GridBox = styled.div`
 height: 90%;
@@ -19,7 +14,8 @@ width: 90%;
 display: grid;
 background-color:green;
 border-style: solid;
-border-radius: 17px;
+border-radius: 1%;
+margin: 1%;
 `
 
 export const DragaoBox = styled.div`
@@ -30,7 +26,7 @@ max-width: 400px;
 //align-items: center;
 //align-self: center;
 border-style: solid;
-border-radius: 17px;
-padding: 10px;
-margin: 10px;
+border-style: solid;
+border-radius: 1%;
+margin: 3%;
 `

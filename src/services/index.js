@@ -7,9 +7,6 @@ export const endpoints = {
     createdragon:`/dragon/`,
     updatedragon:(id) =>`/dragon/${id}`,
     deletedragon: (id) =>`/dragon/${id}`,
-    
-
-    
 }
 
 export default api
