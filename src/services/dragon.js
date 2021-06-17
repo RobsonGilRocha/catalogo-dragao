@@ -7,7 +7,7 @@ export async function getDragons() {
 }
 export async function createDragons({name, type,histories}) { api.post(endpoints.createdragon,{name,type,histories})
 }
-export async function putDragons(id) { api.put(endpoints.updatedragon(id))
+export async function putDragons(id,{name, type,histories}) { api.put(endpoints.updatedragon(id),{name, type,histories})
 }
 export async function deleteDragons(id) { api.delete(endpoints.deletedragon(id))
 }
