@@ -3,7 +3,6 @@ import React,{useEffect, useState } from 'react'
 import {getDragons, createDragons,deleteDragons,putDragons} from '../../services/dragon'
 import { Row, Separator } from '..';
 
-
 function Catalogo() {
   const [dragons, setDragons] = useState()
   const [luz, setLuz] = useState(false)
@@ -23,7 +22,6 @@ function Catalogo() {
        setDragons(response.data)
        setCount(response.data.length)
     }
-    
     FetchDragons()
   },[])
 
@@ -94,15 +92,10 @@ function Catalogo() {
         <p> -Tipo:"{dragons.type}"</p>
         <p> -Historia:"{dragons.histories}"</p>
         <p> -Data: DRAGÃO:"{dragons.createdAt}"-ID:"{dragons.id}"</p>
-
-        
-
         </DragaoBox><Separator /></Row> )}
         {count? <h1>"Essa é a Lista de Drãgões, quantidade total é de: {count} !"</h1>:<h1>"Não a Dragões nesta Lista"</h1>}
           </GridBox>
-          
       </CatalogoBox>
-  
   );
 }
 
