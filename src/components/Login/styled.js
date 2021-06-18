@@ -3,19 +3,34 @@ import styled from 'styled-components';
 export const LoginBox = styled.div`
 background-color:black;
 border-radius: 7%;
-border-style: solid 10px;
-border-color: white;
+border-style: solid;
+border-color: gray;
 padding: 1%;
 height: 40%;
 width: 40%;
+min-height: 150px;
+min-width: 300px;
 margin: 3%;
 font-size: 100%;
+margin-top: 10%;
 `
 export const Loginlabel = styled.label`
 height: 30%;
 width: 30%;
+min-height: 30px;
+min-width: 30px;
 font-size: 100%;
 color:white;
+text-align: end;
+`
+export const LoginTitle = styled.label`
+height: 30%;
+width: 30%;
+min-height: 30px;
+min-width: 200px;
+font-size: 100%;
+color:white;
+text-align: center;
 `
 export const Loginbutton = styled.button`
 background-color:gray;
@@ -34,8 +49,11 @@ font-size: 100%;
 export const Logininput = styled.input`
 background-color:white;
 border-radius: 7%;
-border-style: solid 1px blue ;
-height: 70%;
-width: 70%;
+border-style: solid;
+border-color: gray;
+height: 30%;
+width: 50%;
+min-height: 30px;
+min-width: 50px;
 font-size: 100%;
 `

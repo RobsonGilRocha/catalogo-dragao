@@ -1,9 +1,7 @@
-
-
 body {
   margin-top: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   background: url('./resource/image/logo512.png') center right no-repeat currentColor;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

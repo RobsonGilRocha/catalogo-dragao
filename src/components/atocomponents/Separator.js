@@ -6,6 +6,7 @@ const Separator = styled.div`
   width:  ${({ x }) => x || 10}px;
   background-color:goldenrod;
   border-radius: 100%;
+  
 
 `;
 

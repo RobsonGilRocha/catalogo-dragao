@@ -2,14 +2,18 @@ import{Login, Catalogo} from './components'
 import { useState } from "react";
 
 function App() {
-  const [loginefetuado, setLoginefetuado] = useState(false);
+  const [loginefetuado, setLoginefetuado] = useState(true);
   
   return (
     <>
-     {!loginefetuado ? <Login loginefetuado={loginefetuado}/>: <Catalogo loginefetuado={loginefetuado}/>}
-     <button onClick={()=> console.log(loginefetuado)}>"O console.log :{loginefetuado}"</button>
-     <button onClick={()=> setLoginefetuado(!loginefetuado)}>O com set :{loginefetuado}"</button>
-     <button onClick={()=> console.log("1234")}>"O com função"</button>
+     {
+     !loginefetuado 
+     ? 
+     <Login setLoginefetuado={setLoginefetuado}/>
+     : 
+     <><Catalogo setLoginefetuado={setLoginefetuado} loginefetuado={loginefetuado} />
+     </>
+     }
     </>
   );
 }
