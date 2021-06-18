@@ -3,19 +3,13 @@ import { useState } from "react";
 
 function App() {
   const [loginefetuado, setLoginefetuado] = useState(false);
-
-
- function loginmuda(){
-  setLoginefetuado(!loginefetuado)
-}
-
-
+  
   return (
     <>
-     {!loginefetuado ? <Login/>: <Catalogo/>}
+     {!loginefetuado ? <Login loginefetuado={loginefetuado}/>: <Catalogo loginefetuado={loginefetuado}/>}
      <button onClick={()=> console.log(loginefetuado)}>"O console.log :{loginefetuado}"</button>
-     <button onClick={()=> setLoginefetuado(loginefetuado)}>O com set :{loginefetuado}"</button>
-     <button onClick={loginmuda}>"O com função"</button>
+     <button onClick={()=> setLoginefetuado(!loginefetuado)}>O com set :{loginefetuado}"</button>
+     <button onClick={()=> console.log("1234")}>"O com função"</button>
     </>
   );
 }

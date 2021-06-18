@@ -1,12 +1,28 @@
 import { useState } from "react";
 import { LoginBox,Loginp,Loginlabel,Logininput,Loginbutton } from './styled';
 import { Row,Separator } from '..';
+import {App} from '../../App'
 
 function Login() {
   const [inputusuario, setInputusuario] = useState();
   const [inputsenha, setInputsenha] = useState();
+  const [loginefetuado, setLoginefetuado] = useState();
+  
 
+  /* ({ loginefetuado }) => loginefetuado; */
 
+ /*  function loginmuda(){
+   
+    inputusuario === "admin" && 
+      inputsenha  === "admin"
+      ?
+      
+      setLoginefetuado(true)
+      :
+      setLoginefetuado(false) 
+    }
+
+ */
   
 
   /* setInputusuario
@@ -34,7 +50,7 @@ function Login() {
           </Row>
         </Row>
         <Loginp/>
-          <Loginbutton onClick={console.log("botao entrar")}>Entrar</Loginbutton>
+          <Loginbutton onClick={() => console.log(`essa é o input do login:${inputusuario} e ${inputsenha}`)}>Entrar</Loginbutton>
           {/* () => console.log(`essa é o input do login:${inputusuario} e ${inputsenha}`) */}
           </Row>
           <Separator/>
