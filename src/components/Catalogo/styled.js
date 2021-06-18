@@ -16,14 +16,40 @@ color: white;
 background: url('./resource/image/logo512.png') center right no-repeat;
 `
 export const CatalogoTitle = styled.h1` //sim
-height: 30%;
-width: 30%;
+height: 100%;
+width: 100%;
+min-height: 30px;
+min-width: 200px;
+font-size: 300%;
+color:white;
+text-align: center;
+align-items: center;
+align-self:center;
+align-content:center;
+background: url('./resource/image/logo512.png') center right no-repeat;
+:hover{
+    color:gray;
+    font-size: 330%;
+    font-weight: 700;
+}
+`
+export const CatalogoSubTitle = styled.h1` //sim
+height: 100%;
+width: 100%;
 min-height: 30px;
 min-width: 200px;
 font-size: 200%;
 color:white;
 text-align: center;
+align-items: center;
+align-self:center;
+align-content:center;
 background: url('./resource/image/logo512.png') center right no-repeat;
+:hover{
+    color:gray;
+    font-size: 230%;
+    font-weight: 700;
+}
 `
 export const Catalogobutton = styled.button` //sim
 background-color:gray;
@@ -35,6 +61,10 @@ max-width: 100px;
 font-size: 100%;
 text-align: center;
 color:white;
+:hover{
+        font-size: 130%;
+        font-weight: 700;
+}
 `
 
 export const GridBox = styled.div`//sim
@@ -55,6 +85,7 @@ min-width: 30px;
 font-size: 100%;
 color:white;
 text-align: end;
+
 `
 
 export const NavTopBox = styled.button`
@@ -63,33 +94,54 @@ export const NavTopBox = styled.button`
     border-style: solid;
     border-color: gray;
     background-color: gray;
-    height: 20px;
-    width: 5px;
     position: fixed;
-    bottom: 3%;
+    bottom: 5%;
     right: 3%;
     margin: 3%;
     z-index:2;
     cursor: pointer;
-    color:gray;
+    height: 30px;
+    width: 30px;
+
     :hover{
-        border-radius: 50%;
+    border-radius: 50%;
     border-style: solid;
     border-color: blue;
     background-color: black;
-    height: 8%;
-    width: 5%;
-    position: fixed;
-    bottom: 2%;
-    right: 3%;
-    margin: 2%;
     z-index:3;
     cursor: pointer;
     color: black;
+    background: url('./resource/image/logo512.png') center right no-repeat currentColor;
+    }
+    `
+export const NavBotBox = styled.button`
+
+    border-radius: 100%;
+    border-style: solid;
+    border-color: gray;
+    background-color: gray;
+    position: fixed;
+    bottom: 0%;
+    right: 3%;
+    margin: 3%;
+    z-index:2;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+
+    :hover{
+    border-radius: 50%;
+    border-style: solid;
+    border-color: blue;
+    background-color: black;
+    z-index:3;
+    cursor: pointer;
+    color: black;
+    background: url('./resource/image/logo512.png') center right no-repeat currentColor;
     }
     `
 
-export const DragaoBox = styled.div`
+export const DragaoBox = styled.div` //sim
 height: 100%;
 width: 100%;
 max-height: 400px;
@@ -97,14 +149,12 @@ max-width: 400px;
 //align-items: center;
 //align-self: center;
 border-style: solid;
-border-style: solid;
-border-radius: 1%;
+border-radius: 7%;
 margin: 3%;
+
 `
 
-
-
-export const Logininput = styled.input`
+export const Catalogoinput = styled.input` //sim
 background-color:white;
 border-radius: 7%;
 border-style: solid;

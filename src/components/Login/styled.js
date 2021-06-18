@@ -14,7 +14,7 @@ margin: 3%;
 font-size: 100%;
 margin-top: 10%;
 `
-export const Loginlabel = styled.label`
+/* export const Loginlabel = styled.label`
 height: 30%;
 width: 30%;
 min-height: 30px;
@@ -22,13 +22,13 @@ min-width: 30px;
 font-size: 100%;
 color:white;
 text-align: end;
-`
+` */
 export const LoginTitle = styled.label`
 height: 30%;
 width: 30%;
 min-height: 30px;
 min-width: 200px;
-font-size: 100%;
+font-size: 130%;
 color:white;
 text-align: center;
 `
@@ -47,7 +47,7 @@ width: 100%;
 font-size: 100%;
 `
 export const Logininput = styled.input`
-background-color:white;
+background-color:whites;
 border-radius: 7%;
 border-style: solid;
 border-color: gray;
@@ -55,5 +55,10 @@ height: 30%;
 width: 50%;
 min-height: 30px;
 min-width: 50px;
-font-size: 100%;
+
+:hover{
+    background-color:whitesmoke;
+    font-size: 110%;
+    border-radius: 9%;
+}
 `

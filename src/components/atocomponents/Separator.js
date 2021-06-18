@@ -7,6 +7,7 @@ const Separator = styled.div`
   background-color:goldenrod;
   border-radius: 100%;
   
+  
 
 `;
 

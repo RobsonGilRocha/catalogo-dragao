@@ -1,22 +1,23 @@
-import { CatalogoBox,CatalogoTitle,Catalogobutton,
-   DragaoBox, GridBox, Catalogolabel,NavTopBox } from './styled';
+
 import React,{useEffect, useState } from 'react'
-import {getDragons} from '../../services/dragon'
-//import {getDragons, createDragons,deleteDragons,putDragons} from '../../services/dragon'
+import { getDragons, createDragons, deleteDragons, putDragons} from '../../services/dragon' 
 import { Row, Separator } from '..';
+import { CatalogoBox, CatalogoTitle, CatalogoSubTitle, Catalogobutton,
+   DragaoBox, GridBox, Catalogolabel,Catalogoinput,
+    NavTopBox,NavBotBox } from './styled';
 
 function Catalogo({setLoginefetuado}) {
   const [dragons, setDragons] = useState()
-  /* const [luz, setLuz] = useState(false) */
+  const [optionbar, setOptionbar] = useState(0)
   const [count, setCount] =useState(0)
-  /* const [inputname, setInputname] = useState();
-  const [inputtype, setInputtype] = useState();
-  const [inputhistories, setInputhistories] = useState();
-  const [inputnameput, setInputnameput] = useState();
-  const [inputtypeput, setInputtypeput] = useState();
-  const [inputhistoriesput, setInputhistoriesput] = useState();
-  const [inputdeleteid, setInputdeleteid] = useState();
-  const [inputputid, setInputputid] = useState(); */
+  const [Catalogoinputname, setCatalogoinputname] = useState();
+  const [Catalogoinputtype, setCatalogoinputtype] = useState();
+  const [Catalogoinputhistories, setCatalogoinputhistories] = useState();
+  const [Catalogoinputdeleteid, setCatalogoinputdeleteid] = useState();
+  const [Catalogoinputnameput, setCatalogoinputnameput] = useState();
+  const [Catalogoinputtypeput, setCatalogoinputtypeput] = useState();
+  const [Catalogoinputhistoriesput, setCatalogoinputhistoriesput] = useState();
+  const [Catalogoinputputid, setCatalogoinputputid] = useState();
 
   
   useEffect(()=>{
@@ -27,47 +28,57 @@ function Catalogo({setLoginefetuado}) {
     }
     FetchDragons()
   },[])
+ 
+ function criarOption(){
+  optionbar === 1? setOptionbar(0): setOptionbar(1)
+ /*  alert("criarOption, optionbar mudou para 1 boleano 0") */
+}
+async function handleCreateDragon(){
+  await createDragons({
+    name:`${Catalogoinputname}`,
+    type:`${Catalogoinputtype}`,
+    histories:`${Catalogoinputhistories}`
+  })
+}
 
-/*  function deleteALLBEST(){
-  dragons?.forEach(async (dragon) => {
+function delOption(){
+  optionbar === 2? setOptionbar(0): setOptionbar(2)
+ /*  alert("delOption, optionbar mudou para 2 boleano 0") */
+}
+function deleteID(){
+  deleteDragons(Catalogoinputdeleteid)
+}
+
+function putOption(){
+  optionbar === 3? setOptionbar(0): setOptionbar(3)
+ /*  alert("putOption, optionbar mudou para 3 boleano 0") */
+}
+function updateID(){
+  putDragons(Catalogoinputputid,{
+    name:Catalogoinputnameput,
+    type:Catalogoinputtypeput,
+    histories:Catalogoinputhistoriesput
+  })
+} 
+
+function devOption(){
+  optionbar === 4? setOptionbar(0): setOptionbar(4)
+/*   alert("devOption, optionbar mudou para 0 boleano 4") */
+}
+function deleteALLBEST(){
+  dragons?.forEach( (dragon) => {
     setTimeout(() => {
       deleteDragons(dragon.id);
     }, 2000);
-  })} */
-
- /* function deleteID(){
-   deleteDragons(inputdeleteid)
- } */
-
- /* function updateID(){
-  putDragons(inputputid,{
-    name:inputnameput,
-    type:inputtypeput,
-    histories:inputhistoriesput
-},setLuz(!luz))
-} */
-
- /* async function handleCreateDragon(){
-  await createDragons({
-    name:`${inputname}`,
-    type:`${inputtype}`,
-    histories:`${inputhistories}`
+  }, alert("cudado aperte novamente"))
 }
-  ,setLuz(!luz))
- } */
- function botaoSair(){
-   setLoginefetuado(false)
- }
+
 
  function topOn() {
-  window.scroll({
-      top: 0,
-      behavior: 'smooth'
-/* const [toggle, setToggle] = useState(false)
+   /* const [toggle, setToggle] = useState(false)
     setToggle( window.pageYOffset > 300 ? true : false)
  */
-
-            /* { toggle 
+/* { toggle 
             ?
             <NavTopBox onClick={()=>topOn()}/>
             : 
@@ -75,57 +86,103 @@ function Catalogo({setLoginefetuado}) {
             }
          */
 
+  window.scroll({
+      top: 0,
+      behavior: 'smooth'
+
   })
 }
- 
+function botOn() {
+  /* const [toggle, setToggle] = useState(false)
+   setToggle( window.pageYOffset > 300 ? true : false)
+*/
+/* { toggle 
+           ?
+           <NavTopBox onClick={()=>topOn()}/>
+           : 
+           <NavTopBox onClick={()=>topOn()}/>
+           }
+        */
 
+ window.scroll({
+     top: 10000,
+     behavior: 'smooth'
+
+ })
+}
+/* ,alert(` Foi registrado ${Catalogoinputname}`), 
+  setOptionbar(0) */
+
+
+ 
+let optBarPst =[
+<CatalogoTitle>Catálogo de Dragões</CatalogoTitle>,
+<DragaoBox><CatalogoSubTitle>Registre:</CatalogoSubTitle>
+<Row column="column">
+<Catalogoinput type="text" placeholder="Digite o Nome do Dragão" onChange={(event1) => setCatalogoinputname(event1.target.value)} />
+              <Catalogoinput type="text" placeholder="Digite o Tipo do Dragão" onChange={(event2) => setCatalogoinputtype(event2.target.value)} />
+              <Catalogoinput type="text" placeholder="Digite a Historia do Dragão" onChange={(event3) => setCatalogoinputhistories(event3.target.value)} />
+              <p/>
+</Row>
+              
+              <Row><Separator/><Catalogobutton  onClick={handleCreateDragon}>Criar</Catalogobutton><Separator/></Row>
+              <p/></DragaoBox>,
+<DragaoBox><CatalogoSubTitle>Delete com o ID</CatalogoSubTitle>
+<Row column="column">
+  <Catalogoinput type="text" placeholder="Digite o ID do Dragão"onChange={(eventdelid) => setCatalogoinputdeleteid(eventdelid.target.value)} />
+              <Catalogobutton  onClick={ deleteID}>DELETAR</Catalogobutton><p/><label>Dragão ID:{Catalogoinputdeleteid}</label>
+              <p/></Row>
+              
+              </DragaoBox>,
+<DragaoBox><CatalogoSubTitle>Edite com o ID</CatalogoSubTitle>
+
+<Row column="column">
+  <Catalogoinput type="text" placeholder="ID para edição" onChange={(eventputid) => setCatalogoinputputid(eventputid.target.value)} />
+  <Catalogoinput type="text" placeholder="Digite o Nome do Dragão" onChange={(eventputname) => setCatalogoinputnameput(eventputname.target.value)} />
+  <Catalogoinput type="text" placeholder="Digite o Tipo do Dragão" onChange={(eventputtype) => setCatalogoinputtypeput(eventputtype.target.value)} />
+  <Catalogoinput type="text" placeholder="Digite a Historia do Dragão" onChange={(eventputhistories) => setCatalogoinputhistoriesput(eventputhistories.target.value)} />
+  <Catalogobutton  onClick={ updateID}>Editar</Catalogobutton>
+  <p/>
+              </Row>
+              </DragaoBox>,
+<DragaoBox><CatalogoSubTitle>deleteALLBEST</CatalogoSubTitle> 
+              <Catalogobutton  onClick={deleteALLBEST}>deleteALLBEST</Catalogobutton>
+              </DragaoBox> 
+]
+
+function botaoSair(){
+  setLoginefetuado(false)
+}
   return (
     <>
       <CatalogoBox>
-        <Row><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Separator/><Catalogobutton  onClick={botaoSair}>SAIR</Catalogobutton><Separator/></Row>
-        <Row><Separator/><CatalogoTitle>Catálogo de Dragões</CatalogoTitle><Separator/></Row>
+        <Row><Separator/>
+        <Catalogobutton  onClick={criarOption}>Registrar</Catalogobutton><Separator/>
+        <Catalogobutton  onClick={delOption}>Retirar</Catalogobutton><Separator/>
+        <Catalogobutton  onClick={putOption}>Editar</Catalogobutton><Separator/>
+        <Catalogobutton  onClick={devOption}>DEV</Catalogobutton><Separator/>
+        <Separator/><Separator/><Separator/><Separator/><Separator/><Separator/>
+        <Catalogobutton  onClick={botaoSair}>SAIR</Catalogobutton><Separator/></Row>
+        <Row><Separator/>{optBarPst[optionbar]}<Separator/></Row>
 
-          <Row><Separator/>
-            <Row column='column'>
-              {/* <DragaoBox><h1>CriaçãoBox</h1>
-              <input type="text" onChange={(event1) => setInputname(event1.target.value)} />
-              <input type="text" onChange={(event2) => setInputtype(event2.target.value)} />
-              <input type="text" onChange={(event3) => setInputhistories(event3.target.value)} />
-              <p/>
-              <button  onClick={handleCreateDragon}>-Botao criar:"{inputname}"
-              </button>
-              </DragaoBox> */}
-              {/* <DragaoBox><h1>UPTADEBox</h1>
-              <label>ID para edição</label><input type="text" onChange={(eventputid) => setInputputid(eventputid.target.value)} />
-              <p/><label>nome</label><input type="text" onChange={(eventputname) => setInputnameput(eventputname.target.value)} />
-              <p/><label>tipo</label><input type="text" onChange={(eventputtype) => setInputtypeput(eventputtype.target.value)} />
-              <p/><label>histories</label><input type="text" onChange={(eventputhistories) => setInputhistoriesput(eventputhistories.target.value)} />
-              <button  onClick={ updateID}>-UPDATE Dragão ID:{inputputid}</button>
-              </DragaoBox> */}
-            </Row>
-            <Row column='column'>
-              
-              
-              {/* <DragaoBox><h1>deleteALLBEST</h1> 
-              <button  onClick={deleteALLBEST}>deleteALLBEST</button>
-              </DragaoBox> */}
-              {/* <DragaoBox><h1>DeleteBox</h1>
-              <input type="text" onChange={(eventdelid) => setInputdeleteid(eventdelid.target.value)} />
-              <button  onClick={ deleteID}>-DELETAR Dragão ID:{inputdeleteid}</button>
-              </DragaoBox> */}
-           </Row>
-           <Separator/></Row>
         <GridBox>
-        {dragons && dragons.map(dragons => <Row column='column'><DragaoBox>
-        <p> -Nome do Dragao:"{dragons.name}"</p>
-        <p> -Tipo:"{dragons.type}"</p>
-        <p> -Historia:"{dragons.histories}"</p>
-        <p> -Data: DRAGÃO:"{dragons.createdAt}"-ID:"{dragons.id}"</p>
-        </DragaoBox><Separator /></Row> )}
-        {count? <Catalogolabel>"Essa é a Lista de Drãgões; total de: "{count}""</Catalogolabel>:<Catalogolabel>"Procurando Dragões OU Não a Dragões nesta Lista"</Catalogolabel>}
-          </GridBox>
+          {dragons && dragons.map(dragons => <Row column='column'><DragaoBox>
+          <p> -Nome do Dragao:"{dragons.name}"</p>
+          <p> -Tipo:"{dragons.type}"</p>
+          <p> -Historia:"{dragons.histories}"</p>
+          <p> -Data: DRAGÃO:"{dragons.createdAt}"-ID:"{dragons.id}"</p>
+          </DragaoBox><Separator /></Row> )}
+            {count
+            ? 
+            <Catalogolabel>"Essa é a Lista de Drãgões; total de: "{count}""</Catalogolabel>
+            :
+            <Catalogolabel>"Procurando Dragões OU Não a Dragões nesta Lista"</Catalogolabel>
+            }
+        </GridBox>
           
-      </CatalogoBox><NavTopBox onClick={()=>topOn()}/>
+      </CatalogoBox>
+      <NavBotBox onClick={()=>botOn()}/>
+      <NavTopBox onClick={()=>topOn()}/>
     </>
   );
 }
