@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CatalogoBox = styled.div` //sim
+export const CatalogoBox = styled.div` 
 background-color:black;
 border-radius: 3px;
 border-style: solid;
@@ -8,14 +8,11 @@ border-color: gray;
 padding: 1%;
 height: 97%;
 width: 97%;
-/* min-height: 150px;
-min-width: 300px; */
 margin: 1%;
 font-size: 100%;
 color: white;
-background: url('./resource/image/logo512.png') center right no-repeat;
 `
-export const CatalogoTitle = styled.h1` //sim
+export const CatalogoTitle = styled.h1` 
 height: 100%;
 width: 100%;
 min-height: 30px;
@@ -26,14 +23,13 @@ text-align: center;
 align-items: center;
 align-self:center;
 align-content:center;
-background: url('./resource/image/logo512.png') center right no-repeat;
 :hover{
     color:gray;
     font-size: 330%;
     font-weight: 700;
 }
 `
-export const CatalogoSubTitle = styled.h1` //sim
+export const CatalogoSubTitle = styled.h1` 
 height: 100%;
 width: 100%;
 min-height: 30px;
@@ -51,7 +47,7 @@ background: url('./resource/image/logo512.png') center right no-repeat;
     font-weight: 700;
 }
 `
-export const Catalogobutton = styled.button` //sim
+export const Catalogobutton = styled.button` 
 background-color:gray;
 border-radius: 7%;
 height: 30%;
@@ -67,7 +63,7 @@ color:white;
 }
 `
 
-export const DEVbutton = styled.button` //sim
+export const DEVbutton = styled.button` 
 background-color:gray;
 border-radius: 7%;
 height: 30%;
@@ -84,14 +80,11 @@ color:white;
         color: goldenrod;
 }
 `
-export const GridBox = styled.div`//sim
+export const GridBox = styled.div`
 background-color:gray;
 border-radius: 3%;
 height: 100%;
 width: 100%;
-/* max-height: 50px;
-max-width: 100px; */
-background: url('./resource/image/logo512.png') center right no-repeat;
 `
 
 export const Catalogolabel = styled.label`
@@ -128,7 +121,6 @@ export const NavTopBox = styled.button`
     z-index:3;
     cursor: pointer;
     color: black;
-    background: url('./resource/image/logo512.png') center right no-repeat currentColor;
     }
     `
 export const NavBotBox = styled.button`
@@ -154,24 +146,21 @@ export const NavBotBox = styled.button`
     z-index:3;
     cursor: pointer;
     color: black;
-    background: url('./resource/image/logo512.png') center right no-repeat currentColor;
     }
     `
 
-export const DragaoBox = styled.div` //sim
+export const DragaoBox = styled.div` 
 height: 100%;
 width: 100%;
 max-height: 400px;
 max-width: 400px;
-//align-items: center;
-//align-self: center;
 border-style: solid;
 border-radius: 7%;
 margin: 3%;
 
 `
 
-export const Catalogoinput = styled.input` //sim
+export const Catalogoinput = styled.input` 
 background-color:white;
 border-radius: 7%;
 border-style: solid;

@@ -14,15 +14,6 @@ margin: 3%;
 font-size: 100%;
 margin-top: 10%;
 `
-/* export const Loginlabel = styled.label`
-height: 30%;
-width: 30%;
-min-height: 30px;
-min-width: 30px;
-font-size: 100%;
-color:white;
-text-align: end;
-` */
 export const LoginTitle = styled.label`
 height: 30%;
 width: 30%;
