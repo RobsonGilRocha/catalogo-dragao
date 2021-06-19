@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CatalogoBox = styled.div` //sim
 background-color:black;
-border-radius: 3%;
+border-radius: 3px;
 border-style: solid;
 border-color: gray;
 padding: 1%;
@@ -67,6 +67,23 @@ color:white;
 }
 `
 
+export const DEVbutton = styled.button` //sim
+background-color:gray;
+border-radius: 7%;
+height: 30%;
+width: 100%;
+max-height: 50px;
+max-width: 100px;
+font-size: 100%;
+align-self: center;
+align-content: center;
+color:white;
+:hover{
+        font-size: 130%;
+        font-weight: 700;
+        color: goldenrod;
+}
+`
 export const GridBox = styled.div`//sim
 background-color:gray;
 border-radius: 3%;

@@ -2,15 +2,32 @@ import { useState } from "react";
 import { LoginBox,Loginp,Logininput,Loginbutton,LoginTitle } from './styled';
 import { Row,Separator } from '..';
 
-function Login({setLoginefetuado}) {
+function Login({setLoginefetuado,setLogindev}) {
   const [inputusuario, setInputusuario] = useState();
   const [inputsenha, setInputsenha] = useState();
 
       function loginmuda(){
-        inputusuario === "admin"  
-        &&  inputsenha  === "admin" 
-        ?  setLoginefetuado(true)  
-        :  setLoginefetuado(false);
+        if(inputusuario === "dev"  &&  inputsenha  === "dev"){
+          setLogindev(true)
+          setLoginefetuado(true)
+          window.alert("if 1")
+        } else if(inputusuario === "admin"  &&  inputsenha  === "admin"){
+          setLoginefetuado(true)
+          setLogindev(false)
+          window.alert("if 2")
+        } else if(inputusuario === "admin"  &&  inputsenha  === "admin"){
+          setLogindev(true)
+          setLoginefetuado(true)
+          window.alert("if 3")
+        } else if(inputusuario === "admin"  &&  inputsenha  === "admin"){
+          setLogindev(true)
+          setLoginefetuado(true)
+          window.alert("if 4")
+        } else {
+          setLogindev(false)
+          setLoginefetuado(false)
+        }
+
       }
 
   return (
