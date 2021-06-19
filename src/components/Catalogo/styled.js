@@ -11,6 +11,7 @@ width: 97%;
 margin: 1%;
 font-size: 100%;
 color: white;
+background: url('./resource/image/logo512.png') center right no-repeat;
 `
 export const CatalogoTitle = styled.h1` 
 height: 100%;
@@ -81,7 +82,7 @@ color:white;
 }
 `
 export const GridBox = styled.div`
-background-color:gray;
+
 border-radius: 3%;
 height: 100%;
 width: 100%;
