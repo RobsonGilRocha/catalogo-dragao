@@ -24,7 +24,9 @@ function Login({setLoginefetuado,setLogindev}) {
           setLoginefetuado(false)
           window.alert("Erro ao Logar: senha e usuario incorretos")
         }
-
+          setInputusuario("")
+          setInputsenha("")
+          alert("fim da função")
       }
 
   return (
@@ -34,16 +36,16 @@ function Login({setLoginefetuado,setLogindev}) {
       <LoginBox>
         <Loginp/>
         <Row><Separator/><LoginTitle>Catálogo de Dragões</LoginTitle><Separator/></Row>
-        <Row ><Separator/><Separator/><Separator/><Separator/><Separator/><Logininput type="text" placeholder="Digite seu usuário" onChange={(usuario) => setInputusuario(usuario.target.value)}/><Separator/><Separator/><Separator/><Separator/><Separator/></Row>
-        <Row ><Separator/><Separator/><Separator/><Separator/><Separator/><Logininput type="password" placeholder="Digite sua Senha" onChange={(senha) => setInputsenha(senha.target.value)}/><Separator/><Separator/><Separator/><Separator/><Separator/></Row>
-          <Row><Separator/><Loginbutton onClick={loginmuda}>Entrar</Loginbutton><Separator/></Row>
-          <Row><Separator/><LoginTitle>Tente :admin, admin</LoginTitle><Separator/></Row>
+        <Row ><Separator x="60"/><Logininput value={inputusuario} type="text" placeholder="Digite seu usuário" onChange={(usuario) => setInputusuario(usuario.target.value)}/><Separator x="60"/></Row>
+        <Row ><Separator x="60"/><Logininput value={inputsenha} type="password" placeholder="Digite sua Senha" onChange={(senha) => setInputsenha(senha.target.value)}/><Separator x="60"/></Row>
+        <Row><Separator/><Loginbutton onClick={loginmuda}>Entrar</Loginbutton><Separator/></Row>
+        <Row><Separator/><LoginTitle>Tente :admin, admin</LoginTitle><Separator/></Row>
           
       </LoginBox>
       <LoginBox><Row column="column">
       <Line/>
-  <p/><LoginTitle>Robson Gil Rocha</LoginTitle>
-<LoginTitle>gil1990gil@hotmail.com</LoginTitle><p/>
+  <Loginp/><LoginTitle>Robson Gil Rocha</LoginTitle>
+<LoginTitle>gil1990gil@hotmail.com</LoginTitle><Loginp/>
 <Line/></Row></LoginBox></Row>
       <Separator/>
     </Row>
