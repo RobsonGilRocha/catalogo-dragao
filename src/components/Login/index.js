@@ -26,7 +26,6 @@ function Login({setLoginefetuado,setLogindev}) {
         }
           setInputusuario("")
           setInputsenha("")
-          alert("fim da função")
       }
 
   return (
